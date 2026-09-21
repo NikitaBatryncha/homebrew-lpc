@@ -1,12 +1,11 @@
 cask "lpc-uploader" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.5"
-  sha256 arm:   "06225be99f263628f18c9458e063bba70b6088dfb9b33f518f654826b098afa9",
-         intel: "5f7c387645bbaeb039142509a2e0ebaebedec11c4c9f7a5d21de327430190883"
+  version "1.0.6"
+  sha256 arm:   "9e19cf528dc415bc0bdbf717157365422d8166df14db002f45c73026ac2c70e2",
+         intel: "bdf9d135aa778c933c61000f4d64dc0f671a7b7cb64e6fefbe1760361ca2d556"
 
-  url "https://github.com/NikitaBatryncha/lpc-uploader-releases/releases/download/v#{version}/LPC-Uploader-#{version}-#{arch}.dmg",
-      verified: "github.com/NikitaBatryncha/lpc-uploader-releases/"
+  url "https://github.com/NikitaBatryncha/lpc-uploader-releases/releases/download/v#{version}/lpc-uploader-#{version}-#{arch}.dmg"
   name "LPC Uploader"
   desc "Фоновый сервер для Figma-плагина LPC"
   homepage "https://github.com/NikitaBatryncha/lpc-uploader-releases"
@@ -17,7 +16,7 @@ cask "lpc-uploader" do
   end
 
   auto_updates false
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   app "LPC Uploader.app"
 
@@ -33,8 +32,17 @@ cask "lpc-uploader" do
   ]
 
   caveats <<~EOS
-    Приложение работает в меню-баре (LSUIElement, без окна и иконки в Dock).
-    Подключение плагина: Figma → Plugins → Development → Import plugin from manifest…
+    Приложение не подписано сертификатом Apple Developer.
+    Устанавливать нужно с флагом --no-quarantine:
+
+      brew install --cask --no-quarantine #{token}
+
+    Если приложение уже установлено без флага и macOS считает его повреждённым:
+
+      xattr -dr com.apple.quarantine "/Applications/LPC Uploader.app"
+
+    Приложение работает в меню-баре (без окна и иконки в Dock).
+    Плагин: Figma → Plugins → Development → Import plugin from manifest…
     и выберите ~/LPC Uploader Figma Plugin/manifest.json
   EOS
 end
