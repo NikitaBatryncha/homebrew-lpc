@@ -1,9 +1,9 @@
 cask "lpc-uploader" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.1.2"
-  sha256 arm:   "a16e63e7bdd2c0e0ead82d532905d46057a0a97a2ab888d0cb39e6dcce327721",
-         intel: "acd7908404a7327946344af17af01a2f3d33bdc746113abff1e17b70ccbf79f0"
+  version "1.1.3"
+  sha256 arm:   "76cc0d2218c575864d563fd0750cbb0c11ae1c297e4dcd2b9395d98aa61b15e2",
+         intel: "313ddc20f89d8a26b906efb4c0088248c9c2dafa8429fc94d4606cb140c820ef"
 
   url "https://github.com/NikitaBatryncha/lpc-uploader-releases/releases/download/v#{version}/lpc-uploader-#{version}-#{arch}.dmg"
   name "LPC Uploader"
