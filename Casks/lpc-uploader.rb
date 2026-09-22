@@ -1,11 +1,11 @@
 cask "lpc-uploader" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.1.0"
-  sha256 arm:   "b355fc7ee99f269425eed0880284a67c7e517385b55b0461b1271675636ce537",
-         intel: "be15c1fbe2afd0177bbcbc3d4cbf7ab348a337cf4208146d41aeb0566a15c6d8"
+  version "1.1.1"
+  sha256 arm:   "820681112998d93912fdd5793ef18ba8155610c6bc384b2749a4fe1d6eacbbab",
+         intel: "5a3cf5e7f306f630e16cee4e35716cec8e0f4cdfc1f7fd9a6ec2d8f72bd7de01"
 
-  url "https://github.com/NikitaBatryncha/lpc-uploader-releases/releases/download/v#{version}/LPC-Uploader-#{version}-#{arch}.zip"
+  url "https://github.com/NikitaBatryncha/lpc-uploader-releases/releases/download/v#{version}/lpc-uploader-#{version}-#{arch}.zip"
   name "LPC Uploader"
   desc "Фоновый сервер для загрузки ассетов из Figma-плагина"
   homepage "https://github.com/NikitaBatryncha/lpc-uploader-releases"
